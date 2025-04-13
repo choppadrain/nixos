@@ -27,11 +27,11 @@
   
   hardware = {
     opengl.enable = true;
+    nvidia.modesetting.enable = true;
+    nvidia.open = false;
   };
 
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.open = false;
 
   #Sound with pipewire
   security.rtkit.enable = true;
