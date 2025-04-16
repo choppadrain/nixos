@@ -28,7 +28,7 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.modesetting.enable = true;
     nvidia.open = false;
   };
@@ -61,6 +61,12 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
+      
+      extraEntries = ''
+         menuentry "Windows 10" {
+	   chainloader (hd1,1)+1
+	 }
+       '';
     };
   };
   boot.supportedFilesystems = [ "ntfs" ];
@@ -130,6 +136,7 @@
     prismlauncher
     home-manager
     git
+    kdePackages.dolphin
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
