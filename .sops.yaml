@@ -1,0 +1,9 @@
+# .sops.yaml
+
+keys:
+  - &primary age1xedhtu7nkqkck92uuhgms8zfxsn6ezk36yq82wd964tm6exfq4hqw43a27
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+    - age:
+      - *primary
