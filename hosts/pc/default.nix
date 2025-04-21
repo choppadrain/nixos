@@ -15,17 +15,6 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-  sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  sops.age.keyFile = "/home/choppadrain/.config/sops/age/keys.txt";
-  
-  sops.secrets = {
-    "github_token" = {
-      path = "~/.dots/secrets/secrets.yaml";
-
-    };
-  };
 
   #Hyprland
   programs.hyprland = {
@@ -151,9 +140,6 @@
     git
     kdePackages.dolphin
     libgbm
-    sops
-    gnupg
-    age
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
