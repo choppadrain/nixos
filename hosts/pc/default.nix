@@ -12,10 +12,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.sops-nix.nixosModules.sops
   ];
 
-
+  programs.git.enable = true;
   #Hyprland
   programs.hyprland = {
     enable = true;
@@ -107,6 +106,14 @@
     ];
   };
 
+  #home-manager = {
+   # extraSpecialArgs = {inherit inputs;};
+    #users = {
+#	"choppadrain" = import ./home.nix;
+ #   };
+  #};
+
+  #};
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -117,15 +124,8 @@
     waybar
     dunst
     libnotify
-    hyprpaper
-    kitty
-    wofi
     firefox
-    neovim
     fastfetch
-    vesktop
-    rofi-wayland
-    telegram-desktop
     swaynotificationcenter
     wl-clipboard
     grim
@@ -133,17 +133,16 @@
     gamemode
     os-prober
     ntfs3g
-    yazi
     qt6.full
-    prismlauncher
-    home-manager
-    git
     kdePackages.dolphin
     libgbm
+    
+
+
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }

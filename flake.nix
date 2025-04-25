@@ -1,5 +1,6 @@
+#flake.nix
 {
-  description = "basicflake";
+  description = "main flake";
 
   inputs = {
 
@@ -21,13 +22,19 @@
     };
 
     stylix.url = "github:danth/stylix/ed91a20c84a80a525780dcb5ea3387dddf6cd2de";
-
+   
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    apple-emoji = {
+      url = "github:samuelngs/apple-emoji-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+
 
     };
 
-    
   };
 
 
