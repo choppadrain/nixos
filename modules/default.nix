@@ -1,8 +1,6 @@
 {...}: {
   imports = [
-    ./home.nix
-
-
+    ./gaming/gamingbundle.nix
   ];
 
 

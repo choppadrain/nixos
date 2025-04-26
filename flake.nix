@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland = {
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";	
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,13 +50,14 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/pc
+          ./hosts/pc/default.nix
+	  inputs.stylix.nixosModules.stylix
 
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.choppadrain = import ./home;
+            home-manager.users.choppadrain = import ./hosts/pc/home.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };
