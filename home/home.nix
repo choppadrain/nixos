@@ -21,7 +21,6 @@
     yazi
     waybar
     vesktop
-    rofi-wayland
     kitty
     telegram-desktop
     prismlauncher
@@ -29,6 +28,7 @@
     hyprpaper
     kitty
     gh
+    wofi
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
