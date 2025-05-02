@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   programs.git.enable = true;
@@ -101,6 +102,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "choppadrain" = import ./home.nix;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -120,7 +128,6 @@
     qt6.full
     kdePackages.dolphin
     libgbm
-    
 
 
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.

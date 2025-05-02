@@ -20,7 +20,7 @@ in {
       };
 
       zsh = {
-        enable = true;
+	enable = true;
         shellAliases = aliases;
         antidote = {
           enable = true;
@@ -31,6 +31,7 @@ in {
             "ohmyzsh/ohmyzsh path:plugins/sudo"
             "zsh-users/zsh-syntax-highlighting"
             "zsh-users/zsh-autosuggestions"
+	    "ohmyzsh/ohmyzsh path:themes/half-life"
           ];
         };
 
