@@ -1,42 +1,29 @@
 # zsh
-{ pkgs, inputs, ...}: {
+{ lib, config, pkgs, ... }:
 
+{
   options = {
-    zsh.enable = 
-      lib.mkEnableOptions "enable zsh";
+    zsh.enable = lib.mkEnableOption "enable zsh with oh-my-zsh";
   };
 
   config = lib.mkIf config.zsh.enable {
-    option1 = 5;
-    option2 = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
+    programs.zsh = {
       enable = true;
-      plugins = [
-        "git"
-	#"zsh-autocompletions"
-	"zsh-syntax-highlight"
-	"thefuck"
-	"fzf"
-	"history"
-      ];
-      theme = "half-life";
+      ohMyZsh = {
+        enable = true;
+        plugins = [ 
+          "git"    
+          "history"
+	  "fzf"
+	  "thefuck"
+	  "zsh-syntax-highlight"
+        ];
+        theme = "half-life";
+      };
+      
+      initExtra = ''
+        # custom stuff will be in there
+      '';
     };
-
-
   };
-
-
-
-
-
-
-
-
-
-
-
 }

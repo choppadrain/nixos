@@ -7,17 +7,14 @@
   };
 
   config = lib.mkIf config.steam.enable {
-    option1 = 5;
-    option2 = true;
-
-    programs = {
-      gamemode.enable = true;
-      steam = {
-        enable = true;
-        gamescopeSession.enable = true;
-      };
+    # Основные настройки Steam
+    programs.steam = {
+      enable = true;
+      gamescopeSession.enable = true;
     };
 
-    protontricks.enable = true;
+    # Дополнительные компоненты
+    #programs.gamemode.enable = true;
+    #programs.protontricks.enable = true;
   };
 }

@@ -1,5 +1,5 @@
 # cli bundle
-{...}: {
+{pkgs, lib, ...}: {
   imports = [
     ./zsh.nix
   ];
