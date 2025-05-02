@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./gaming/gamingbundle.nix
-    ./cli/clibundle.nix
+    #./cli/clibundle.nix
   ];
 
 

@@ -9,7 +9,7 @@
   config = lib.mkIf config.zsh.enable {
     programs.zsh = {
       enable = true;
-      ohMyZsh = {
+      oh-my-zsh = {
         enable = true;
         plugins = [ 
           "git"    
