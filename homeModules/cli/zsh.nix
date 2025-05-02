@@ -54,20 +54,10 @@ in {
 	  export BROWSER = "zen"
 	  export OPENER = "xdg-open-gtk"
 
-	''
+	'';
 
 
 
       };
-
-    };
-
-
-
-
-
-
-
-
-  };
+   };  
 }
