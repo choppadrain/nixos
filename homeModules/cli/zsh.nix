@@ -9,7 +9,7 @@
   };
 in {
   options = {
-    zsh.enable = lib.mkEnableOption "enable zsh with oh-my-zsh";
+    zsh.enable = lib.mkEnableOption "enable zsh";
   };
 
   config = lib.mkIf config.zsh.enable {

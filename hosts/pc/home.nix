@@ -13,7 +13,7 @@
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
-  #programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
 
   # You should not change this value, even if you update Home Manager. If you do
