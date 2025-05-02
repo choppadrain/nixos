@@ -87,6 +87,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.choppadrain = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "nixos";
     extraGroups = [

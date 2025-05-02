@@ -1,8 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  imports = [
+   ./../../modules/gaming/gamingbundle.nix
+   ./../../modules/cli/clibundle.nix
+  ];
+
+
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
 

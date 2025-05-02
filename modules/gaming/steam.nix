@@ -1,25 +1,23 @@
 # steam.nix
-{ pkgs, ...}:
+{ pkgs, lib, config, ... }:
 
 {
-  programs  = {
-    gamemode.enable = true;
+  options = {
+    steam.enable = lib.mkEnableOption "enable steam";
+  };
 
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
+  config = lib.mkIf config.steam.enable {
+    option1 = 5;
+    option2 = true;
+
+    programs = {
+      gamemode.enable = true;
+      steam = {
+        enable = true;
+        gamescopeSession.enable = true;
+      };
     };
+
+    protontricks.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    mangohud
-    gamescope
-
-  ];
-
-  protontricks = {
-    enable = true;
-
-  };
-
 }
