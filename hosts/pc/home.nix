@@ -3,7 +3,7 @@
 {
   imports = [
    #./../../modules/gaming/gamingbundle.nix
-   ./../../modules/cli/zsh.nix
+   ./../../homeModules/cli/zsh.nix
   ];
 
 
