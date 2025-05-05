@@ -5,7 +5,7 @@
     po = "poweroff";
     sn = "shutdown now";
     srn = "shutdown -r now";
-    rbuild = "sudo nixos-rebuild switch --show-trace --flake ~/.dots#nixos";
+    rbuild = "sudo nixos-rebuild switch --show-trace --flake ~/.dots\#nixos";
   };
 in {
   options = {
@@ -14,41 +14,46 @@ in {
 
   config = lib.mkIf config.zsh.enable {
     programs = {
-      bash = {
-        enable = true;
-        shellAliases = true;
-      };
 
       zsh = {
 	enable = true;
         shellAliases = aliases;
+	completionInit = "";
         antidote = {
           enable = true;
-          useFriendlyNames = true;
+	  useFriendlyNames = true;
           plugins = [
-            "getantidote/useomz"
-            "ohmyzsh/ohmyzsh path:plugins/git"
-            "ohmyzsh/ohmyzsh path:plugins/sudo"
-            "zsh-users/zsh-syntax-highlighting"
-            "zsh-users/zsh-autosuggestions"
-	    "ohmyzsh/ohmyzsh path:themes/half-life"
+	    "mattmc3/ez-compinit kind:defer"
+	    "zsh-users/zsh-syntax-highlighting kind:defer"
+            "zsh-users/zsh-autosuggestions kind:defer"
+	    "zsh-users/zsh-history-substring-search"
+	    "zsh-users/zsh-completions kind:fpath path:src"
+            "mattmc3/zfunctions"
+
+	    "chisui/zsh-nix-shell"
+	    "nix-community/nix-zsh-completions"
+
+
           ];
         };
 
-        history = {
-          append = true;
-          findNoDups = true;
-          ignoreAllDups = true;
-          ignoreSpace = true;
-          path = "$HOME/.zsh_history";
-        };
+	history = {
+	  append = true;
+	  findNoDups = true;
+	  ignoreAllDups = true;
+	  saveNoDups = true;
+	  ignoreSpace = true;
+	  path = "$HOME/.zsh_history";
+#
+	};
 
         envExtra = ''
           export EDITOR="nvim"
           export TERMINAL="kitty"
           export TERM="kitty"
           export BROWSER="zen"
-          export OPENER="xdg-open-gtk"
+
+	  eval "$(fnm env --use-on-cd --shell zsh)"
         '';
       };
     };
