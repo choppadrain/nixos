@@ -6,6 +6,7 @@
    #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/swag/fonts/stylixFonts.nix
+   inputs.stylix.homeManagerModules.stylix
   ];
 
 

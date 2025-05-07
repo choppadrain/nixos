@@ -51,8 +51,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/pc/default.nix
-          inputs.home-manager.nixosModules.default
-
+          #inputs.home-manager.nixosModules.default
+	  stylix.homeManagerModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
