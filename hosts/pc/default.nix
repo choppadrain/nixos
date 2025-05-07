@@ -102,12 +102,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "choppadrain" = import ./home.nix;
-    };
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
