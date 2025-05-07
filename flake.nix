@@ -32,7 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    apple-emoji = {
+    apple-emoji-linux = {
       url = "github:samuelngs/apple-emoji-linux";
       inputs.nixpkgs.follows = "nixpkgs";
 

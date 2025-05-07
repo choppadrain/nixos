@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "apple-emoji": {
+    "apple-emoji-linux": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -686,7 +686,7 @@
     },
     "root": {
       "inputs": {
-        "apple-emoji": "apple-emoji",
+        "apple-emoji-linux": "apple-emoji-linux",
         "apple-fonts": "apple-fonts",
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
@@ -893,7 +893,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "apple-emoji",
+          "apple-emoji-linux",
           "nixpkgs"
         ]
       },
