@@ -45,7 +45,7 @@
 
 
   outputs =
-    { self, nixpkgs, home-manager, stylix, ... }@inputs:
+    { self, nixpkgs, home-manager, stylix, apple-emoji-linux, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };

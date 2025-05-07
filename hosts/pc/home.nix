@@ -59,7 +59,8 @@
     # '')
   ];
 
-  home-manager.users.choppadrain = {
+  #home-manager.
+  users.choppadrain = {
     stylix.targets.xyz.enable = true;
 
   };
