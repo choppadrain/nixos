@@ -5,14 +5,18 @@
 }:
 
 {
+  fonts.enable = true;
   programs.steam.enable = true;
 
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ./../../modules/fonts.nix
   ];
-
+  
+  programs.dconf.enable = true;
+  
   programs.git.enable = true;
   #Hyprland
   programs.hyprland = {
@@ -69,6 +73,7 @@
        '';
     };
   };
+
   boot.supportedFilesystems = [ "ntfs" ];
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -101,6 +106,21 @@
   programs.zsh.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  #};
+  #home-manager = {
+   # extraSpecialArgs = { inherit inputs; };
+    #useGlobalPkgs = true;
+    #useUserPackages = true;
+    #sharedModules = with import ./../../homeModules; [
+      #hyprland
+      #waybar
+     # inputs.stylix.homeManagerModules.stylix
+    #];
+    #users = {
+     # "choppadrain" = import ./home.nix;
+    #};
+  #};
 
 
   # List packages installed in system profile. To search, run:

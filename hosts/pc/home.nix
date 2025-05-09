@@ -1,14 +1,15 @@
 # my home-setup BTW
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports = [
    #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
-   ./../../homeModules/swag/fonts/stylixFonts.nix
-   inputs.stylix.homeManagerModules.stylix
+   #./../../homeModules/swag/fonts/stylixFonts.nix
+   #stylix.nixosModules.stylix
   ];
-
+  #services.hyprpaper.enable =  false; 
+  #stylix.targets.hyprpaper.enable = false;
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
@@ -16,8 +17,8 @@
 
 #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
-  stylix.autoEnable = true;
-  stylixFonts.enable = true;
+  #stylix.autoEnable = true;
+  #stylixFonts.enable = true;
 
 
 
@@ -41,6 +42,10 @@
     gh
     wofi
     inputs.zen-browser.packages."${system}".twilight
+
+    #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
+    #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
+    #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
     
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -61,10 +66,7 @@
   ];
 
   #home-manager.
-  users.choppadrain = {
-    stylix.targets.xyz.enable = true;
 
-  };
 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -104,23 +106,3 @@
 
 
 
-#	$$$$$$$$\ $$\   $$\  $$$$$$\  $$\   $$\                     
-#	$$  _____|$$ |  $$ |$$  __$$\ $$ | $$  |                    
-#	$$ |      $$ |  $$ |$$ /  \__|$$ |$$  /                     
-#	$$$$$\    $$ |  $$ |$$ |      $$$$$  /                      
-#	$$  __|   $$ |  $$ |$$ |      $$  $$<                       
-#	$$ |      $$ |  $$ |$$ |  $$\ $$ |\$$\                      
-#	$$ |      \$$$$$$  |\$$$$$$  |$$ | \$$\                     
-#	\__|       \______/  \______/ \__|  \__|                    
-                                                            
-                                                            
-                                                            
-#	$$\   $$\ $$$$$$$\  $$\   $$\ $$\   $$\ $$$$$$$$\ $$\   $$\ 
-#	$$ |  $$ |$$  __$$\ $$ |  $$ |$$$\  $$ |\__$$  __|$$ |  $$ |
-#	$$ |  $$ |$$ |  $$ |$$ |  $$ |$$$$\ $$ |   $$ |   $$ |  $$ |
-#	$$ |  $$ |$$$$$$$\ |$$ |  $$ |$$ $$\$$ |   $$ |   $$ |  $$ |
-#	$$ |  $$ |$$  __$$\ $$ |  $$ |$$ \$$$$ |   $$ |   $$ |  $$ |
-#	$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |\$$$ |   $$ |   $$ |  $$ |
-#	\$$$$$$  |$$$$$$$  |\$$$$$$  |$$ | \$$ |   $$ |   \$$$$$$  |
-# 	 \______/ \_______/  \______/ \__|  \__|   \__|    \______/ 
-#

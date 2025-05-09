@@ -41,27 +41,20 @@
 
   };
 
-
-
-
-  outputs =
-    { self, nixpkgs, home-manager, stylix, ... }@inputs:
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/pc/default.nix
-          #inputs.home-manager.nixosModules.default
-	  stylix.homeManagerModules.stylix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.choppadrain = import ./hosts/pc/home.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-      };
-    };
-}
+ outputs = {self, nixpkgs, home-manager, stylix, ...}@inputs: {
+     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+       specialArgs = { inherit inputs; };
+       modules = [
+         ./hosts/pc
+         home-manager.nixosModules.default
+         stylix.nixosModules.stylix
+         {
+           home-manager.useGlobalPkgs = true;
+           home-manager.useUserPackages = true;
+           home-manager.users.choppadrain = ./hosts/pc/home.nix;
+           home-manager.extraSpecialArgs = { inherit inputs;};
+         }
+       ];
+     };
+   };
+ }
