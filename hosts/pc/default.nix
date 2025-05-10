@@ -15,7 +15,6 @@
     ./../../modules/fonts.nix
   ];
   
-  programs.dconf.enable = true;
   
   programs.git.enable = true;
   #Hyprland
@@ -107,20 +106,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
-  #};
-  #home-manager = {
-   # extraSpecialArgs = { inherit inputs; };
-    #useGlobalPkgs = true;
-    #useUserPackages = true;
-    #sharedModules = with import ./../../homeModules; [
-      #hyprland
-      #waybar
-     # inputs.stylix.homeManagerModules.stylix
-    #];
-    #users = {
-     # "choppadrain" = import ./home.nix;
-    #};
-  #};
 
 
   # List packages installed in system profile. To search, run:

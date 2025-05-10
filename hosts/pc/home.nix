@@ -5,8 +5,7 @@
   imports = [
    #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
-   #./../../homeModules/swag/fonts/stylixFonts.nix
-   #stylix.nixosModules.stylix
+   ./../../homeModules/hyprland/waybar.nix
   ];
   #services.hyprpaper.enable =  false; 
   #stylix.targets.hyprpaper.enable = false;
@@ -17,6 +16,7 @@
 
 #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
+  waybar.enable = true;
   #stylix.autoEnable = true;
   #stylixFonts.enable = true;
 

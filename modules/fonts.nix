@@ -12,6 +12,9 @@
      enableDefaultPackages = true;
      packages = with pkgs; [
        nerd-fonts.jetbrains-mono
+       nerd-fonts.droid-sans-mono
+       font-awesome
+       material-icons
 
        inputs.apple-emoji-linux.packages."${system}".apple-emoji-linux
        inputs.apple-fonts.packages."${system}".sf-mono-nerd
@@ -24,7 +27,7 @@
    fontconfig = {
      defaultFonts = {
        serif = ["SFRounded Nerd Font Medium" "SFProText Font Medium" "JetBrainsMono Nerd Font"];
-       sansSerif = ["SFProText Nerd Font SemiBold" "SFProText Font Medium" "JetBrainsMono Nerd Font" ];
+       sansSerif = ["SFProText Nerd Font Medium" "SFProText Font Medium" "JetBrainsMono Nerd Font" ];
        monospace =  [ "SFMono Nerd Font SemiBold" "JetBrainsMono Nerd Font"];
        emoji = ["Apple Color Emoji"];
      };
@@ -79,6 +82,14 @@
               <edit name="family" mode="assign" binding="strong">
                 <string>SFProText Nerd Font</string>
               </edit>
+            </match>
+
+	    <description>Enforce the grayscale antialiasing for correct rendering after stem-darkening</description>
+            <match target="font">
+              <edit name="rgba" mode="assign"><const>none</const></edit>
+              <edit name="antialias" mode="assign"><bool>true</bool></edit>
+              <edit name="hinting" mode="assign"><bool>true</bool></edit>
+              <edit name="lcdfilter" mode="assign"><const>lcdnone</const></edit>
             </match>
           </fontconfig>
         '';  
