@@ -6,9 +6,8 @@
    #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/hyprland/waybar.nix
+   #./../../homeModules/hyprland/hyprland.nix
   ];
-  #services.hyprpaper.enable =  false; 
-  #stylix.targets.hyprpaper.enable = false;
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
@@ -17,8 +16,7 @@
 #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
   waybar.enable = true;
-  #stylix.autoEnable = true;
-  #stylixFonts.enable = true;
+  #hyprland.enable = true;
 
 
 
@@ -42,7 +40,8 @@
     gh
     wofi
     inputs.zen-browser.packages."${system}".twilight
-
+    bibata-cursors
+    aseprite
     #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
     #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
     #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
@@ -65,7 +64,6 @@
     # '')
   ];
 
-  #home-manager.
 
 
 
