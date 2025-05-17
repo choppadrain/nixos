@@ -6,7 +6,10 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+       url = "github:notashelf/nvf";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };	
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -42,10 +45,18 @@
   };
 
  outputs = {self, nixpkgs, home-manager, nvf, ...}@inputs: {
+   packages."x86_64-linux".default = 
+     (nvf.lib.neovimConfiguration{
+        pkgs = nixpkgs.legacyPackages. "x86_64-linux";
+	modules = [ ./modules/nvim/nvf.nix];
+     }).neovim;
+
+
+
      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
        specialArgs = { inherit inputs; };
        modules = [
-         ./hosts/pc
+         ./hosts/pc/default.nix
          home-manager.nixosModules.default
 	 nvf.nixosModules.default
          {

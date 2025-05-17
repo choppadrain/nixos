@@ -3,6 +3,7 @@
 
 {
   imports = [
+   inputs.nvf.homeManagerModules.default
    #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/hyprland/waybar.nix
