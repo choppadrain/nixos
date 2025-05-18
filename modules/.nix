@@ -4,7 +4,7 @@
      stylixconf.enable = lib.mkEnableOption "enable stylix";
    };
    
-   config = lib.mkIf config.stylixconf.enable {
+   config = lib.mkIf config.stylixconf {
        stylix = {
           base16Scheme = {
                 base00 = "#161b1d";

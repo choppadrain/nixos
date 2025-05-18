@@ -1,5 +1,5 @@
 # zsh
-{ lib, config, pkgs, ... }: let
+{ lib, config, ... }: let
   aliases = {
     c = "clear";
     po = "poweroff";

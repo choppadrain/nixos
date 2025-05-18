@@ -1,12 +1,12 @@
 # my home-setup BTW
-{ config, pkgs, inputs, lib, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
    inputs.nvf.homeManagerModules.default
-   #./../../modules/gaming/gamingbundle.nix
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/hyprland/waybar.nix
+   ./../../modules/stylix.nix
    #./../../homeModules/hyprland/hyprland.nix
   ];
 
@@ -16,6 +16,8 @@
 
 #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
+  stylix.enable = true;
+  stylixconf.enable = true;
   waybar.enable = true;
   #hyprland.enable = true;
 

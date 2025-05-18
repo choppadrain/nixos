@@ -15,6 +15,8 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    stylix.url = "github:nix-community/stylix";
 
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";	
@@ -44,7 +46,7 @@
 
   };
 
- outputs = {self, nixpkgs, home-manager, nvf, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, nvf, stylix, ...}@inputs: {
    packages."x86_64-linux".default = 
      (nvf.lib.neovimConfiguration{
         pkgs = nixpkgs.legacyPackages. "x86_64-linux";
@@ -62,9 +64,10 @@
      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
        specialArgs = { inherit inputs; };
        modules = [
-         ./hosts/pc/default.nix
          home-manager.nixosModules.default
 	 nvf.nixosModules.default
+         stylix.nixosModules.stylix
+         ./hosts/pc/default.nix
          {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;

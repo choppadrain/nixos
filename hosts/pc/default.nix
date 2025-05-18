@@ -4,7 +4,7 @@
   ...
 }:
 
-{
+{ 
   fonts.enable = true;
   nvfconf.enable = true;
   programs.steam.enable = true;
