@@ -1,4 +1,4 @@
-{pkgs, inputs, lib, config, ...}: {
+{lib, config, ...}: {
 
    options = {
      hyprland.enable = lib.mkEnableOption "enable hyprland";

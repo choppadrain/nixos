@@ -35,7 +35,7 @@
     kitty
     telegram-desktop
     prismlauncher
-    neovim
+    go
     hyprpaper
     kitty
     gh

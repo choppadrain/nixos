@@ -48,8 +48,14 @@
    packages."x86_64-linux".default = 
      (nvf.lib.neovimConfiguration{
         pkgs = nixpkgs.legacyPackages. "x86_64-linux";
-	modules = [ ./modules/nvim/nvf.nix];
+	modules = [ ./modules/nvf/nvf.nix];
      }).neovim;
+
+      overlays = [
+          (final: prev: {
+            neovim = self.packages."x86_64-linux".my-neovim;
+          })
+        ];
 
 
 
