@@ -6,7 +6,7 @@
    inputs.nvf.homeManagerModules.default
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/hyprland/waybar.nix
-   ./../../modules/stylix.nix
+   ./../../homeModules/swag/stylixconf.nix
    #./../../homeModules/hyprland/hyprland.nix
   ];
 
