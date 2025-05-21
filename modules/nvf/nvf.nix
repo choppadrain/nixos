@@ -5,15 +5,20 @@
   };
 
   config = lib.mkIf config.nvfconf.enable {
-    programs.nvf = {
+    programs.nvf = {    
       enable = true;
       settings = {
 	vim = {
+
+          options = {
+            autoindent = false;
+          };
+
           lsp.enable = true;
           theme = {
+            name = "tokyonight";
+            style = "storm";
             enable = true;
-	    name = "nord";
-	    style = "dark";
 	    transparent = true;
 	  };
 

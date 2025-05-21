@@ -8,7 +8,6 @@
   fonts.enable = true;
   nvfconf.enable = true;
   programs.steam.enable = true;
-  stylix.enable = true;
 
   imports = [
     # Include the results of the hardware scan.
@@ -17,6 +16,8 @@
     ./../../modules/fonts.nix
     ./../../modules/nvf/nvf.nix
   ];
+
+  programs.stylix.enable = true;
   
   
   programs.git.enable = true;
