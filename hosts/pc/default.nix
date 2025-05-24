@@ -17,7 +17,6 @@
     ./../../modules/nvf/nvf.nix
   ];
 
-  programs.stylix.enable = true;
   
   
   programs.git.enable = true;

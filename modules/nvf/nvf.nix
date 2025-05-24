@@ -17,7 +17,7 @@
           lsp.enable = true;
           theme = {
             name = "tokyonight";
-            style = "storm";
+            style = "night";
             enable = true;
 	    transparent = true;
 	  };

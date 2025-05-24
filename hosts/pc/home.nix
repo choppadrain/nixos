@@ -6,10 +6,10 @@
    inputs.nvf.homeManagerModules.default
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/hyprland/waybar.nix
-   ./../../homeModules/swag/stylixconf.nix
                 #./../../homeModules/hyprland/hyprland.nix
    ./../../homeModules/cli/yazi.nix
    ./../../homeModules/shell/kitty.nix
+   ./../../bundles/stylixbundle.nix
   ];
 
   home.username = "choppadrain";
@@ -19,7 +19,6 @@
 #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
   stylix.enable = true;
-  stylixconf.enable = true;
   waybar.enable = true;
   #hyprland.enable = true;
   yazi.enable = true;

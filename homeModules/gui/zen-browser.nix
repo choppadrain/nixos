@@ -1,5 +1,5 @@
 # zen-browser
-{ config, pkgs, lib, ...}:
+{ config, lib, ...}:
 
 {
   options = {
