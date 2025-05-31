@@ -5,12 +5,13 @@
  config = lib.mkIf config.yazi.enable {
         programs = {
         yazi = {
+        package = pkgs.yazi;
             enable = true;
             enableZshIntegration = true;
             shellWrapperName = "yz";
             settings = {
                 plugins = with pkgs.yaziPlugins; {
-                    full-border = full-border;
+                    "full-border.yazi" = full-border;
                 };
 
                 initLua = ''

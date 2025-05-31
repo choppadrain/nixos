@@ -5,7 +5,7 @@
   imports = [
    inputs.nvf.homeManagerModules.default
    ./../../homeModules/cli/zsh.nix
-   ./../../homeModules/hyprland/waybar.nix
+   ./../../homeModules/deUtils/waybar.nix
                 #./../../homeModules/hyprland/hyprland.nix
    ./../../homeModules/cli/yazi.nix
    ./../../homeModules/shell/kitty.nix

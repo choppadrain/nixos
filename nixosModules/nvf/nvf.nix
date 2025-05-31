@@ -19,7 +19,6 @@
             name = "tokyonight";
             style = "night";
             enable = true;
-	    transparent = true;
 	  };
 
           statusline.lualine = {

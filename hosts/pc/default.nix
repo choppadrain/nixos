@@ -13,8 +13,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./../../modules/fonts.nix
-    ./../../modules/nvf/nvf.nix
+    ./../../homeModules/fonts.nix
+    ./../../homeModules/nvf/nvf.nix
   ];
 
   

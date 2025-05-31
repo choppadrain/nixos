@@ -50,7 +50,7 @@
    packages."x86_64-linux".default = 
      (nvf.lib.neovimConfiguration{
         pkgs = nixpkgs.legacyPackages. "x86_64-linux";
-	modules = [ ./modules/nvf/nvf.nix];
+	modules = [ ./nixosModules/nvf/nvf.nix];
      }).neovim;
 
       overlays = [
