@@ -17,7 +17,11 @@
     };
     
     stylix.url = "github:nix-community/stylix";
-
+    
+    niri = {
+      url = "github:sodiboo/niri-flake";            
+    };
+    
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";	
     };

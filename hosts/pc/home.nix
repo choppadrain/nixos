@@ -6,10 +6,10 @@
    inputs.nvf.homeManagerModules.default
    ./../../homeModules/cli/zsh.nix
    ./../../homeModules/deUtils/waybar.nix
-                #./../../homeModules/hyprland/hyprland.nix
    ./../../homeModules/cli/yazi.nix
-   ./../../homeModules/shell/kitty.nix
+   ./../../homeModules/terminals/kitty.nix
    ./../../bundles/stylixbundle.nix
+   ./../../nixosModules/compositors/niri/nirihome.nix
   ];
 
   home.username = "choppadrain";

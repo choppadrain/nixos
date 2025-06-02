@@ -12,9 +12,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./../../nixosModules/compositors/niri/niri.nix
     inputs.home-manager.nixosModules.default
-    ./../../homeModules/fonts.nix
-    ./../../homeModules/nvf/nvf.nix
+    ./../../nixosModules/fonts/fonts.nix
+    ./../../nixosModules/nvf/nvf.nix
   ];
 
   
