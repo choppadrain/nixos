@@ -9,7 +9,7 @@
    ./../../homeModules/cli/yazi.nix
    ./../../homeModules/terminals/kitty.nix
    ./../../bundles/stylixbundle.nix
-   ./../../nixosModules/compositors/niri/nirihome.nix
+                #./../../nixosModules/compositors/niri/nirihome.nix
   ];
 
   home.username = "choppadrain";

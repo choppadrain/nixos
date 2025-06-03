@@ -20,7 +20,7 @@
             style = "night";
             enable = true;
 	  };
-
+                                        #done
           statusline.lualine = {
               enable = true;
           };
@@ -40,7 +40,7 @@
             enable = true;
 
           };
-
+                                        #done
           languages = {
             enableTreesitter = true;
             go.enable = true;
