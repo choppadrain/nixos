@@ -35,7 +35,7 @@
             enable = true;
             ui.enable = true;
           };
-
+                                        #done
           autopairs.nvim-autopairs = {
             enable = true;
 
