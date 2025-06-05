@@ -6,7 +6,6 @@
 
 { 
   fonts.enable = true;
-  nvfconf.enable = true;
   programs.steam.enable = true;
 
   imports = [
@@ -15,7 +14,6 @@
     ./../../nixosModules/compositors/niri/niri.nix
     inputs.home-manager.nixosModules.default
     ./../../nixosModules/fonts/fonts.nix
-    ./../../nixosModules/nvf/nvf.nix
   ];
 
   
