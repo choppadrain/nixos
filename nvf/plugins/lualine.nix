@@ -1,5 +1,5 @@
 {...}:{
-  vim.statusline.lualine = {
+  programs.nvf.settings.vim.statusline.lualine = {
     enable = true;
 
     activeSection = {

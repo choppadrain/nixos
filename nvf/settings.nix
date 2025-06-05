@@ -7,8 +7,8 @@
                 };
 
         theme = {
-                name = "tokynight";
-                style = "night";
+                name = "gruvbox";
+                        #style = "night";
                 enable = true;
                 };
 

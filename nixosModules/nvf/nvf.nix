@@ -16,8 +16,8 @@
 
           lsp.enable = true;
           theme = {
-            name = "tokyonight";
-            style = "night";
+            name = "catppuccin";
+            style = "frappe";
             enable = true;
 	  };
                                         #done
