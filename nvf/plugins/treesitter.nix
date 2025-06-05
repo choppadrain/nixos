@@ -1,5 +1,5 @@
-{...}: {
-programs.nvf.settings.vim.treesitter = {
+{
+config.vim.treesitter = {
         enable = true;
         };
 

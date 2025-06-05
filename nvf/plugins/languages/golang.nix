@@ -1,5 +1,5 @@
-{...}: {
-programs.nvf.settings.vim.languages.go = {
+{
+config.vim.languages.go = {
         enable = true;
         treesitter.enable = true;
         lsp.enable = true;

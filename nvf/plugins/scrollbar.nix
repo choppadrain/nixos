@@ -1,5 +1,5 @@
-{...}: {
-        programs.nvf.settings.vim.visuals.nvim-scrollbar = {
+{
+        config.vim.visuals.nvim-scrollbar = {
                 enable = true;       
         
         };

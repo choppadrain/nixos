@@ -1,5 +1,5 @@
-{...}: {
-   programs.nvf.settings.vim.mini.notify = {
+{
+   config.vim.mini.notify = {
                enable = true;
         };
 }

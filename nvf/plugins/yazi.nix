@@ -1,5 +1,5 @@
 {...}: {
-   programs.nvf.settings.vim = {
+   config.vim = {
         utility.yazi-nvim = {
             enable = true;    
                 };

@@ -1,5 +1,5 @@
-{...}: {
-   programs.nvf.settings.vim.mini.indentscope = {
+{
+   config.vim.mini.indentscope = {
         enable = true;
         };
 
