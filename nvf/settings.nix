@@ -1,5 +1,7 @@
 {
   config.vim = {
+	viAlias = true;
+	vimAlias = true;
         options = {
                 autoindent = false;
                 tabstop = 4;
@@ -7,14 +9,24 @@
                 };
 
         theme = {
-                name = "gruvbox";
-                        #style = "night";
+                name = "tokyonight";
+		        style = "night";
                 enable = true;
                 };
-
-        luaConfigRc = ''
-                vim.opt.expandtab = true;
-                
-                '';
         };
+        
+        visuals = {
+            nvim-cursorline.enable = true;
+            cinnamon-nvim.enable = true;
+            highlight-undo.enable = true;
+        };
+        
+        minimap = {
+            codewindow.enable = true;
+        };
+
+        ui = {
+            illuminate.enable = true;
+        };
+        
 }

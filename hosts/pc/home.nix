@@ -36,15 +36,17 @@
     hyprpaper
     kitty
     gh
+    hyprpolkitagent
     wofi
+    btop
     inputs.zen-browser.packages."${system}".twilight
     aseprite
                 #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
                 #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
                 #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
+     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default 
     
   ];
-
 
 
 
