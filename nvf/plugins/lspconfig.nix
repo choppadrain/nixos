@@ -4,8 +4,7 @@
       enable = true;
       formatOnSave = true;
       trouble.enable = true;
-      lspsaga.enable = true;
-    };     
+      lspSignature.enable = true;
+    };
   };
-
 }
