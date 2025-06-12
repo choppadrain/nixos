@@ -1,23 +1,19 @@
 #default.nix
 {
-  pkgs, inputs,
+  pkgs,
+  inputs,
   ...
-}:
-
-{ 
+}: {
   fonts.enable = true;
   programs.steam.enable = true;
 
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./../../nixosModules/compositors/niri/niri.nix
     inputs.home-manager.nixosModules.default
     ./../../nixosModules/fonts/fonts.nix
   ];
 
-  
-  
   programs.git.enable = true;
   #Hyprland
   programs.hyprland = {
@@ -30,7 +26,7 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   hardware = {
     graphics.enable = true;
@@ -38,7 +34,7 @@
     nvidia.open = false;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   #Sound with pipewire
   security.rtkit.enable = true;
@@ -66,16 +62,16 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      
+
       extraEntries = ''
-         menuentry "Windows 10" {
-	   chainloader (hd1,1)+1
-	 }
-       '';
+               menuentry "Windows 10" {
+          chainloader (hd1,1)+1
+        }
+      '';
     };
   };
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
   networking.hostName = "nixos"; # Define your hostname.
 
   networking.networkmanager.enable = true;
@@ -107,8 +103,6 @@
   programs.zsh.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -132,12 +126,11 @@
     fnm
     libreoffice
     hyprpolkitagent
-
+    niri
 
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
 
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

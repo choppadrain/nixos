@@ -1,29 +1,28 @@
 # my home-setup BTW
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-   inputs.nvf.homeManagerModules.default
-   ./../../homeModules/cli/zsh.nix
-   ./../../homeModules/deUtils/waybar.nix
-   ./../../homeModules/cli/yazi.nix
-   ./../../homeModules/terminals/kitty.nix
-   ./../../bundles/stylixbundle.nix
-                #./../../nixosModules/compositors/niri/nirihome.nix
+    inputs.nvf.homeManagerModules.default
+    ./../../homeModules/shell/zsh.nix
+    ./../../homeModules/deUtils/waybar.nix
+    ./../../homeModules/cli/yazi.nix
+    ./../../homeModules/terminals/kitty.nix
+    ./../../bundles/stylixbundle.nix
+    #./../../nixosModules/compositors/niri/nirihome.nix
   ];
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
-
-
-#  ---=== ENABLE/DISABLE MY STUFF THERE ===---
+  #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   zsh.enable = true;
   stylix.enable = true;
   waybar.enable = true;
   #hyprland.enable = true;
   yazi.enable = true;
   kitty.enable = true;
-
 
   home.stateVersion = "25.05";
 
@@ -41,14 +40,11 @@
     btop
     inputs.zen-browser.packages."${system}".twilight
     aseprite
-                #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
-                #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
-                #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
-     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default 
-    
+    #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
+    #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
+    #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-
-
 
   home.file = {
   };
@@ -59,7 +55,3 @@
 
   programs.home-manager.enable = true;
 }
-
-
-
-
