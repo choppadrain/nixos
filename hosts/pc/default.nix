@@ -90,7 +90,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.choppadrain = {
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     description = "nixos";
     extraGroups = [
       "networkmanager"
@@ -100,7 +100,6 @@
       "video"
     ];
   };
-  programs.zsh.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

@@ -11,13 +11,15 @@
     ./../../homeModules/cli/yazi.nix
     ./../../homeModules/terminals/kitty.nix
     ./../../bundles/stylixbundle.nix
+    ./../../homeModules/shell/nushell.nix
+    #./../../bundles/rice.nix
     #./../../nixosModules/compositors/niri/nirihome.nix
   ];
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
   #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
-  zsh.enable = true;
+  zsh.enable = false;
   stylix.enable = true;
   waybar.enable = true;
   #hyprland.enable = true;
@@ -39,7 +41,7 @@
     wofi
     btop
     inputs.zen-browser.packages."${system}".twilight
-    aseprite
+    obsidian
     #inputs.apple-emoji-linux.packages.${pkgs.system}.apple-emoji-linux
     #inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
     #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd

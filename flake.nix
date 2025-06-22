@@ -37,7 +37,7 @@
     };
 
     apple-emoji-linux = {
-      url = "github:samuelngs/apple-emoji-linux";
+      url = "github:samuelngs/apple-emoji-linux/419b5b4ed32b8088214823dc5b79442a505ffceb";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
