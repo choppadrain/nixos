@@ -21,8 +21,8 @@
     xwayland.enable = true;
   };
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    #NIXOS_OZONE_WL = "1";
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
   xdg.portal.enable = true;
@@ -30,11 +30,9 @@
 
   hardware = {
     graphics.enable = true;
-    nvidia.modesetting.enable = true;
-    nvidia.open = false;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   #Sound with pipewire
   security.rtkit.enable = true;
@@ -126,6 +124,10 @@
     libreoffice
     hyprpolkitagent
     niri
+    vulkan-tools
+    mesa
+    libva
+    libvdpau-va-gl
 
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget

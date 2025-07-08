@@ -3,7 +3,7 @@
     nushell = {
       enable = true;
       extraConfig = ''
-         let zoxide_completer = {|spans|
+          let zoxide_completer = {|spans|
             $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
         }
         #alias completion fix

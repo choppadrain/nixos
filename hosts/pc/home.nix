@@ -8,10 +8,10 @@
     inputs.nvf.homeManagerModules.default
     ./../../homeModules/shell/zsh.nix
     ./../../homeModules/deUtils/waybar.nix
-    ./../../homeModules/cli/yazi.nix
     ./../../homeModules/terminals/kitty.nix
-    ./../../bundles/stylixbundle.nix
     ./../../homeModules/shell/nushell.nix
+    ./../../homeModules/stylix
+    ./../../bundles/cliworkflow.nix
     #./../../bundles/rice.nix
     #./../../nixosModules/compositors/niri/nirihome.nix
   ];
@@ -19,11 +19,9 @@
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
   #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
-  zsh.enable = false;
   stylix.enable = true;
   waybar.enable = true;
   #hyprland.enable = true;
-  yazi.enable = true;
   kitty.enable = true;
 
   home.stateVersion = "25.05";
