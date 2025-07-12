@@ -12,6 +12,8 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ./../../nixosModules/fonts/fonts.nix
+    ./../../nixosModules/nixos/amdgpu.nix
+    ./../../nixosModules/nixos/kernel.nix
   ];
 
   programs.git.enable = true;
@@ -126,9 +128,7 @@
     niri
     vulkan-tools
     mesa
-    libva
-    libvdpau-va-gl
-
+    rpcs3
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
