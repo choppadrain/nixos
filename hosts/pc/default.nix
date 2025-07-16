@@ -2,8 +2,14 @@
 {
   pkgs,
   inputs,
+  config,
   ...
-}: {
+}: let
+  amdgpu-kernel-module = pkgs.callPackage ../../modules/nixos/amdgpu/patches/amdgpu-kernel-module.nix {
+    # Make sure the module targets the same kernel as your system is using.
+    kernel = config.boot.kernelPackages.kernel;
+  };
+in {
   fonts.enable = true;
   programs.steam.enable = true;
 
@@ -14,6 +20,7 @@
     ./../../nixosModules/fonts/fonts.nix
     ./../../nixosModules/nixos/amdgpu.nix
     ./../../nixosModules/nixos/kernel.nix
+    ./../../nixosModules/nixos/patches/amdgpu-kernel-module.nix
   ];
 
   programs.git.enable = true;
@@ -52,6 +59,15 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+  ];
+  boot.extraModulePackages = [
+    pkgs.linuxPackages.v4l2loopback
+    (amdgpu-kernel-module.overrideAttrs (_: {
+      patches = [../../nixosModules/nixos/patches/amdgpu-revert.patch];
+    }))
+  ];
+  boot.kernelParams = [
+    "amdgpu.ppfeaturemask=0xffffffff"
   ];
 
   # Bootloader.
