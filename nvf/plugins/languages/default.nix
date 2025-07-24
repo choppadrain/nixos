@@ -1,9 +1,7 @@
-{...}:{
-imports = [
-        ./nix.nix
-        ./golang.nix
-        
-        ];
-
-
+{...}: {
+  imports = [
+    ./nix.nix
+    ./golang.nix
+    ./cpp.nix
+  ];
 }

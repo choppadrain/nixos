@@ -18,8 +18,8 @@
     };
 
     theme = {
-      name = "tokyonight";
-      style = "night";
+      name = "catppuccin";
+      style = "mocha";
       enable = true;
     };
     visuals = {

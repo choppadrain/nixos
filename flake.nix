@@ -15,8 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:nix-community/stylix";
-
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
@@ -35,11 +33,6 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    apple-emoji-linux = {
-      url = "github:samuelngs/apple-emoji-linux/419b5b4ed32b8088214823dc5b79442a505ffceb";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -47,7 +40,6 @@
     nixpkgs,
     home-manager,
     nvf,
-    stylix,
     ...
   } @ inputs: {
     packages."x86_64-linux".default =
@@ -61,7 +53,6 @@
       modules = [
         home-manager.nixosModules.default
         nvf.nixosModules.default
-        stylix.nixosModules.stylix
         ./hosts/pc/default.nix
         {
           home-manager.useGlobalPkgs = true;

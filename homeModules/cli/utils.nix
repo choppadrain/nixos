@@ -5,6 +5,8 @@
     ripgrep
     ncdu
     iftop
+    btop
+    htop
 
     mpv
     ffmpeg

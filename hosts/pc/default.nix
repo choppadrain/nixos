@@ -4,34 +4,28 @@
   inputs,
   config,
   ...
-}: let
-  amdgpu-kernel-module = pkgs.callPackage ../../modules/nixos/amdgpu/patches/amdgpu-kernel-module.nix {
-    # Make sure the module targets the same kernel as your system is using.
-    kernel = config.boot.kernelPackages.kernel;
+}: {
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-in {
-  fonts.enable = true;
   programs.steam.enable = true;
 
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./../../nixosModules/fonts/fonts.nix
     ./../../nixosModules/nixos/amdgpu.nix
     ./../../nixosModules/nixos/kernel.nix
-    ./../../nixosModules/nixos/patches/amdgpu-kernel-module.nix
+    ./../../nixosModules/nixos/fonts.nix
   ];
 
   programs.git.enable = true;
-  #Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   environment.sessionVariables = {
-    #WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "xcb";
+    SDL_VIDEODRIVER = "wayland";
+    XDG_SESSION_TYPE = "wayland";
   };
 
   xdg.portal.enable = true;
@@ -59,15 +53,6 @@ in {
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-  ];
-  boot.extraModulePackages = [
-    pkgs.linuxPackages.v4l2loopback
-    (amdgpu-kernel-module.overrideAttrs (_: {
-      patches = [../../nixosModules/nixos/patches/amdgpu-revert.patch];
-    }))
-  ];
-  boot.kernelParams = [
-    "amdgpu.ppfeaturemask=0xffffffff"
   ];
 
   # Bootloader.

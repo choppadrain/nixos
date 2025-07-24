@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
     "amdgpu.ppfeaturemask=0xffffffff"
