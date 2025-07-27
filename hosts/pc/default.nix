@@ -23,7 +23,6 @@
   programs.git.enable = true;
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    QT_QPA_PLATFORM = "xcb";
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
   };

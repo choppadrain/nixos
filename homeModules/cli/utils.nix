@@ -7,6 +7,7 @@
     iftop
     btop
     htop
+    fastfetch
 
     mpv
     ffmpeg

@@ -20,7 +20,6 @@
   home.homeDirectory = "/home/choppadrain";
   #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   waybar.enable = true;
-  #hyprland.enable = true;
   kitty.enable = true;
 
   home.stateVersion = "25.05";
@@ -43,12 +42,16 @@
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default
     mangohud
   ];
-
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+  };
   home.file = {
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
   programs.home-manager.enable = true;

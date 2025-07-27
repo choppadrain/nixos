@@ -5,14 +5,18 @@
     enable = true;
     xwayland.enable = true;
     settings = {
+      monitor = "DP-2, 1920x1080@144, 0x0, 1";
+      "env" = "HYPRCURSOR_THEME, BibataModernIce";
       general = {
         gaps_in = "12";
         gaps_out = "15";
         border_size = "3";
+        "col.active_border" = "rgba(cdd6f4aa)";
+        #"col.active_border" = "rgb($color2)";
+        allow_tearing = true;
+        layout = "dwindle";
 
-        layout = "master";
-        col.active_border = "rgb(%%color2%%)";
-        col.inactive_border = "rgb(%%background%%)";
+        "col.inactive_border" = "rgba(1e1e2eaa)";
       };
 
       decoration = {
@@ -25,7 +29,8 @@
           enabled = true;
           range = "15";
           render_power = "3";
-          color = "rgb(%%background alpha=0.9 %%)";
+          color = "rgba(1e1e2eee)";
+          #color = "rgb($shadow)";
         };
 
         blur = {
@@ -41,11 +46,46 @@
         enabled = true;
       };
 
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+      misc = {
+        force_default_wallpaper = "1";
+        disable_hyprland_logo = true;
+      };
+
+      bezier = [
+        "easeOutQuint,0.23,1,0.32,1"
+        "easeInOutCubic,0.65,0.05,0.36,1"
+        "linear,0,0,1,1"
+        "almostLinear,0.5,0.5,0.75,1.0"
+        "quick,0.15,0,0.1,1"
+      ];
+      animation = [
+        "global, 1, 10, default"
+        "border, 1, 5.39, easeOutQuint"
+        "windows, 1, 4.79, easeOutQuint"
+        "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+        "windowsOut, 1, 1.49, linear, popin 87%"
+        "fadeIn, 1, 1.73, almostLinear"
+        "fadeOut, 1, 1.46, almostLinear"
+        "fade, 1, 3.03, quick"
+        "layers, 1, 3.81, easeOutQuint"
+        "layersIn, 1, 4, easeOutQuint, fade"
+        "layersOut, 1, 1.5, linear, fade"
+        "fadeLayersIn, 1, 1.79, almostLinear"
+        "fadeLayersOut, 1, 1.39, almostLinear"
+        "workspaces, 1, 1.94, almostLinear, fade"
+        "workspacesIn, 1, 1.21, almostLinear, fade"
+        "workspacesOut, 1, 1.94, almostLinear, fade"
+      ];
+
       exec-once = [
         "systemctl --user start hyprpolkitagent"
         "swaynotificationcenter"
         "waybar"
-        "hyprctl setcursor BibataModernIce 24"
+        " hyprctl setcursor Bibata-Modern-Ice 24"
       ];
 
       "$mod" = "SUPER";
@@ -53,6 +93,7 @@
         # summoning apps
         "$mod, return, exec, kitty"
         "$mod, tab, exec, kitty -e yazi"
+        "$mod, D, exec, wofi --show drun"
 
         # judging apps
         "$mod, Q, killactive,"
@@ -64,10 +105,10 @@
         "$mod, p, pseudo"
 
         #move focus
-        "$mainMod, h, movefocus, l"
-        "$mainMod, l, movefocus, r"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, j, movefocus, d"
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
+        "$mod, k, movefocus, u"
+        "$mod, j, movefocus, d"
 
         #switch workspaces
         "$mod, 1, workspace, 1"
@@ -104,10 +145,6 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        #mouse
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-
         #etc
         ", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
       ];
@@ -131,7 +168,7 @@
         kb_options = "grp:alt_shift_toggle";
 
         follow_mouse = "1";
-        sensvity = "0";
+        sensitivity = "0";
         accel_profile = "flat";
       };
       workspace = [
@@ -157,6 +194,7 @@
       "$color13" = "rgb(%%color13%%)";
       "$color14" = "rgb(%%color14%%)";
       "$color15" = "rgb(%%color15%%)";
+      "$shadow" = "rgba(%%background alpha=0)";
     };
   };
 }
