@@ -5,6 +5,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-yazi-flavors.url = "github:aguirre-matteo/nix-yazi-flavors";
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +35,11 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-
   outputs = {
     self,
     nixpkgs,
@@ -52,8 +57,9 @@
       specialArgs = {inherit inputs;};
       modules = [
         home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
         nvf.nixosModules.default
-        ./hosts/pc/default.nix
+        ./hosts/pc/configuration.nix
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

@@ -18,6 +18,7 @@
     ./../../nixosModules/nixos/amdgpu.nix
     ./../../nixosModules/nixos/kernel.nix
     ./../../nixosModules/nixos/fonts.nix
+    ./../../homeModules/stylix
   ];
 
   programs.git.enable = true;

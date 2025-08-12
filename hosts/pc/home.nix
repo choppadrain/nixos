@@ -6,21 +6,16 @@
 }: {
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./../../homeModules/shell/zsh.nix
     ./../../homeModules/terminals/kitty.nix
     ./../../homeModules/shell/nushell.nix
     ./../../bundles/desktop.nix
     ./../../bundles/cli.nix
-    #./../../homeModules/stylix
-    #./../../bundles/rice.nix
-    #./../../nixosModules/compositors/niri/nirihome.nix
   ];
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
   #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
   waybar.enable = true;
-  kitty.enable = true;
 
   home.stateVersion = "25.05";
 
