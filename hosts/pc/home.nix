@@ -41,6 +41,9 @@
     #inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default
     mangohud
+    clang
+    protontricks
+    
   ];
   home.pointerCursor = {
     gtk.enable = true;
