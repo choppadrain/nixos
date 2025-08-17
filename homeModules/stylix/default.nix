@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   stylix = {
+    enable = true;
     base16Scheme = {
       base00 = "0d0c0c";
       base01 = "1D1C19";

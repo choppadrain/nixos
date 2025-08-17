@@ -37,7 +37,8 @@
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.default
     mangohud
     protontricks
-    wine64
+    winetricks
+    wineWowPackages.full
     prismlauncher
   ];
   home.pointerCursor = {

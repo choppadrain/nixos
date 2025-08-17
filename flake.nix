@@ -45,6 +45,7 @@
     nixpkgs,
     home-manager,
     nvf,
+    stylix,
     ...
   } @ inputs: {
     packages."x86_64-linux".default =
@@ -57,7 +58,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
         nvf.nixosModules.default
         ./hosts/pc/configuration.nix
         {
