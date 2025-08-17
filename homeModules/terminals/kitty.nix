@@ -20,38 +20,38 @@
 
         cursor = "#c8c093";
 
-        #url_color = "#72a7bc";
+        url_color = "#72a7bc";
 
-        #active_tab_foreground = "#c8c093";
-        #active_tab_background = "#12120f";
-        #inactive_tab_foreground = "#a6a69c";
-        #inactive_tab_background = "#12120f";
-        #color0 = "#0d0c0c";
-        #color8 = "#a6a69c";
+        active_tab_foreground = "#c8c093";
+        active_tab_background = "#12120f";
+        inactive_tab_foreground = "#a6a69c";
+        inactive_tab_background = "#12120f";
+        color0 = "#0d0c0c";
+        color8 = "#a6a69c";
 
-        #color1 = "#c4746e";
-        #color9 = "#e46876";
+        color1 = "#c4746e";
+        color9 = "#e46876";
 
-        #color2 = "#8a9a7b";
-        #color10 = "#87a987";
+        color2 = "#8a9a7b";
+        color10 = "#87a987";
 
-        #color3 = "#c4b28a";
-        #color11 = "#e6c384";
+        color3 = "#c4b28a";
+        color11 = "#e6c384";
 
-        #color4 = "#8ba4b0";
-        #color12 = "#7fb4ca";
+        color4 = "#8ba4b0";
+        color12 = "#7fb4ca";
 
-        #color5 = "#a292a3";
-        #color13 = "#938aa9";
+        color5 = "#a292a3";
+        color13 = "#938aa9";
 
-        #color6 = "#8ea4a2";
-        #color14 = "#7aa89f";
+        color6 = "#8ea4a2";
+        color14 = "#7aa89f";
 
-        #color7 = "#c8c093";
-        #color15 = "#c5c9c5";
+        color7 = "#c8c093";
+        color15 = "#c5c9c5";
 
-        #color16 = "#b6927b";
-        #color17 = "#b98d7b";
+        color16 = "#b6927b";
+        color17 = "#b98d7b";
       };
     };
   };
