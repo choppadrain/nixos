@@ -1,4 +1,4 @@
-#copied from github:daemonLife/nixos-hyprland, thank you man, its rly cool
+#copied from github:daemonLife/nixos-hyprland
 {
   config,
   lib,

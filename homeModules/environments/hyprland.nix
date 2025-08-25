@@ -1,22 +1,26 @@
 #todo:
 #finish hellwal
-{...}: {
+{
+  lib,
+  config,
+  ...
+}:
+with lib;
+with config.lib.stylix.colors; {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     settings = {
       monitor = "DP-2, 1920x1080@144, 0x0, 1";
-      "env" = "HYPRCURSOR_THEME, BibataModernIce";
+      #"env" = "HYPRCURSOR_THEME, BibataModernIce";
       general = {
         gaps_in = "12";
         gaps_out = "15";
         border_size = "3";
-        "col.active_border" = "rgba(cdd6f4aa)";
-        #"col.active_border" = "rgb($color2)";
         allow_tearing = true;
         layout = "dwindle";
-
-        "col.inactive_border" = "rgba(1e1e2eaa)";
+        "col.active_border" = mkForce "rgb(${base05})";
+        "col.inactive_border" = mkForce "rgb(${base00})";
       };
 
       decoration = {
@@ -29,8 +33,7 @@
           enabled = true;
           range = "15";
           render_power = "3";
-          color = "rgba(1e1e2eee)";
-          #color = "rgb($shadow)";
+          color = mkForce "rgb(${base00})";
         };
 
         blur = {
@@ -175,27 +178,6 @@
       workspace = [
         "windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
-
-      #hellwal
-      "$background" = "rgb(%%background%%)";
-      "$foreground" = "rgb(%%foreground%%)";
-      "$color0" = "rgb(%%color0%%)";
-      "$color1" = "rgb(%%color1%%)";
-      "$color2" = "rgb(%%color2%%)";
-      "$color3" = "rgb(%%color3%%)";
-      "$color4" = "rgb(%%color4%%)";
-      "$color5" = "rgb(%%color5%%)";
-      "$color6" = "rgb(%%color6%%)";
-      "$color7" = "rgb(%%color7%%)";
-      "$color8" = "rgb(%%color8%%)";
-      "$color9" = "rgb(%%color9%%)";
-      "$color10" = "rgb(%%color10%%)";
-      "$color11" = "rgb(%%color11%%)";
-      "$color12" = "rgb(%%color12%%)";
-      "$color13" = "rgb(%%color13%%)";
-      "$color14" = "rgb(%%color14%%)";
-      "$color15" = "rgb(%%color15%%)";
-      "$shadow" = "rgba(%%background alpha=0)";
     };
   };
 }
