@@ -9,8 +9,8 @@
     };
 
     monospace = {
-      name = "SFProText Nerd Font Medium";
+      name = "SFMono Nerd Font SemiBold";
     };
-    sizes.terminal = 13;
+    sizes.terminal = 12;
   };
 }

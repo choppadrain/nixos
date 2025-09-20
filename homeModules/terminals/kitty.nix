@@ -4,6 +4,7 @@
       enableGitIntegration = true;
       enable = true;
       settings = {
+        #       shell = "tmux new-session -A -s main";
         transparency = "0.9";
         cursor_trail = "1";
         cursor_trail_decay = "0.075 0.175";
@@ -13,7 +14,7 @@
         hide_window_decorations = "no";
 
         #foreground = "#c5c9c5";
-        #ackground = "#181616";
+        #background = "#181616";
 
         #selection_foreground = "#c8c093";
         #selection_background = "#2d4f67";

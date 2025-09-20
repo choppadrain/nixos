@@ -1,5 +1,7 @@
 {
   config.vim = {
+    globals.mapleader = ",";
+    globals.maplocalleader = " <space> ";
     viAlias = true;
     vimAlias = true;
     options = {
@@ -18,8 +20,8 @@
     };
 
     theme = {
-      name = "catppuccin";
-      style = "mocha";
+      name = "onedark";
+      style = "dark";
       enable = true;
     };
     visuals = {

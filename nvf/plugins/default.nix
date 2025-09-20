@@ -12,5 +12,6 @@
     ./tabline.nix
     ./cinnamon.nix
     ./illuminate.nix
+    ./telescope.nix
   ];
 }

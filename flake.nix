@@ -7,6 +7,11 @@
 
     nix-yazi-flavors.url = "github:aguirre-matteo/nix-yazi-flavors";
 
+    otter-launcher = {
+      url = "github:kuokuo123/otter-launcher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +44,10 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -46,6 +55,7 @@
     home-manager,
     nvf,
     stylix,
+    niri,
     ...
   } @ inputs: {
     packages."x86_64-linux".default =
@@ -60,6 +70,7 @@
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
         nvf.nixosModules.default
+        niri.homeModules.niri
         ./hosts/pc/configuration.nix
         {
           home-manager.useGlobalPkgs = true;

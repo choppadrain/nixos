@@ -19,6 +19,7 @@
     ./../../nixosModules/nixos/kernel.nix
     ./../../nixosModules/nixos/fonts.nix
     ./../../homeModules/stylix
+    # ./../../homeModules/environments/niri.nix
   ];
 
   programs.git.enable = true;
@@ -129,7 +130,6 @@
     fnm
     libreoffice
     hyprpolkitagent
-    niri
     vulkan-tools
     mesa
     rpcs3

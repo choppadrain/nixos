@@ -1,9 +1,9 @@
 {
-  config.vim.languages.nix = {
+  config.vim.languages.lua = {
     enable = true;
-    treesitter.enable = true;
     extraDiagnostics.enable = true;
-    lsp.enable = true;
     format.enable = true;
+    lsp.enable = true;
+    treesitter.enable = true;
   };
 }

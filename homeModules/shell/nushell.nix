@@ -3,34 +3,16 @@
     nushell = {
       enable = true;
       extraConfig = ''
-          let zoxide_completer = {|spans|
-            $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
+             let carapace_completer = {|spans|
+        carapace $spans.0 nushell ...$spans | from json
         }
-        #alias completion fix
-
-        let expanded_alias = (scope aliases | where name == $spans.0 | get -i 0 | get -i expansion)
-
-        let spans = (if $expanded_alias != null  {
-            # put the first word of the expanded alias first in the span
-            $spans | skip 1 | prepend ($expanded_alias | split row " " | take 1)
-        } else { $spans })
-
-        $env.config = {
-            show_banner: false
-            completions: {
-                case_sensetive: false
-                quick: true
-                partial: true
-                algorithm: "fuzzy"
-                external: {
-                    enable: true
-                }
-            }
+         $env.config = {
+        show_banner: false,
         }
-
       '';
       shellAliases = {
         yz = "yazi";
+        c = "clear";
       };
     };
     carapace.enable = true;

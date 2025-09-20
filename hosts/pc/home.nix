@@ -14,8 +14,6 @@
 
   home.username = "choppadrain";
   home.homeDirectory = "/home/choppadrain";
-  #  ---=== ENABLE/DISABLE MY STUFF THERE ===---
-  waybar.enable = true;
 
   home.stateVersion = "25.05";
 
@@ -40,13 +38,11 @@
     winetricks
     wineWowPackages.full
     prismlauncher
+    qbittorrent
+    lutris
+    protonup
+    gamescope
   ];
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-  };
   home.file = {
   };
 
