@@ -70,7 +70,7 @@
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
         nvf.nixosModules.default
-        niri.homeModules.niri
+        niri.nixosModules.niri
         ./hosts/pc/configuration.nix
         {
           home-manager.useGlobalPkgs = true;
