@@ -9,7 +9,7 @@
       set -g status-style "bg=default,fg=black,bright"
       set -g status-left "#S"
       set -g status-right "#[fg=black, bright]#S"
-      set -g status-justify absolute-cetnre
+      set -g status-justify absolute-centre
       set -g window-status-current-style "fg=blue bold"
       set -g status-position top
 
