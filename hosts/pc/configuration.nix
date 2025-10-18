@@ -35,7 +35,6 @@
   hardware = {
     graphics.enable = true;
     graphics.enable32Bit = true;
-    graphics.extraPackages = [pkgs.amdvlk];
     steam-hardware.enable = true;
   };
 

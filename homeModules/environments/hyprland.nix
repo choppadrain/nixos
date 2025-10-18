@@ -176,6 +176,9 @@ with config.lib.stylix.colors; {
         accel_profile = "flat";
       };
       workspace = [
+        "windowrulev2 = fullscreen, class:^(GT: New Horizons.*)$"
+
+        "windowrulev2 = noanim, class:^(GT: New Horizons.*)$`"
         "windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };

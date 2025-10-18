@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fzf
-    p7zip
+    p7zip-rar
     ripgrep
     ncdu
     iftop

@@ -42,6 +42,7 @@
     lutris
     protonup
     gamescope
+    rpcs3
   ];
   home.file = {
   };

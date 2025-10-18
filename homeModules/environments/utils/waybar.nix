@@ -1,15 +1,16 @@
 {
-  lib,
-  config,
+  inputs,
+  pkgs,
   ...
 }: {
   programs = {
     waybar = {
+      package = inputs.waybar.packages.${pkgs.system}.default;
       enable = true;
 
       settings = {
         main = {
-          layer = "top";
+          layer = "bottom";
           position = "top";
 
           height = 20;
@@ -60,10 +61,8 @@
               dnd-inhibited-none = " ";
             };
             return-type = "json";
-            exec-if = "which dunstctl";
             exec = "swaync-client -swb";
             on-click = "swaync-client -t -sw";
-            on-click-right = "dunstctl close-all";
             escape = true;
           };
           "cpu" = {

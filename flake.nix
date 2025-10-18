@@ -4,7 +4,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    waybar = {
+      url = "github:Alexays/Waybar/6dc5a73a02af12fccf8eac8494da7d91db23400b";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-yazi-flavors.url = "github:aguirre-matteo/nix-yazi-flavors";
 
     otter-launcher = {
